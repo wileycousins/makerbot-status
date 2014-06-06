@@ -34,7 +34,7 @@ serialport.list (err, ports) ->
       ).fail((err) ->
         makerbot.close()
         console.log "Closing Serial Port."
-        throw errreturn
+        throw err
       ).done makerbot.close.bind(makerbot)
     ++i
   return

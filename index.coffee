@@ -19,7 +19,7 @@ serialport.list (err, ports) ->
 
   for port in ports
     console.log port
-    if port.pnpId?.match("MakerBot") or port.manufacturer?.match("MakerBot Industries")
+    if port.pnpId?.match "Arduino_Mega_2560"
       console.log "Found MakerBot", port.comName
       makerbot.init port.comName, config
       makerbot.open().then(makerbot.getBuildName.bind(makerbot)).then((name) ->
